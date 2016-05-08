@@ -85,6 +85,15 @@ public class ForecastAdapter extends CursorAdapter {
                 // Get weather icon
                 viewHolder.iconView.setImageResource(Utility.getArtResourceForWeatherCondition(
                         cursor.getInt(ForecastFragment.COL_WEATHER_CONDITION_ID)));
+
+                // new insert starts
+
+                // Read weather forecast from cursor
+                String locationString = cursor.getString(ForecastFragment.COL_CITY_NAME);
+                // Find TextView and set weather forecast on it
+                viewHolder.locationView.setText(locationString);
+
+                // new insert ends
                 break;
             }
             case VIEW_TYPE_FUTURE_DAY: {
@@ -126,6 +135,7 @@ public class ForecastAdapter extends CursorAdapter {
         public final TextView descriptionView;
         public final TextView highTempView;
         public final TextView lowTempView;
+        public final TextView locationView;
 
         public ViewHolder(View view) {
             iconView = (ImageView) view.findViewById(R.id.list_item_icon);
@@ -133,6 +143,7 @@ public class ForecastAdapter extends CursorAdapter {
             descriptionView = (TextView) view.findViewById(R.id.list_item_forecast_textview);
             highTempView = (TextView) view.findViewById(R.id.list_item_high_textview);
             lowTempView = (TextView) view.findViewById(R.id.list_item_low_textview);
+            locationView = (TextView) view.findViewById(R.id.list_item_loc_textview);
         }
     }
 }
