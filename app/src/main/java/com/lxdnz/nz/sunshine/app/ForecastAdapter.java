@@ -94,20 +94,27 @@ public class ForecastAdapter extends CursorAdapter {
                 viewHolder.locationView.setText(locationString);
 
                 // new insert ends
+                // Read date from cursor
+                long dateInMillis = cursor.getLong(ForecastFragment.COL_WEATHER_DATE);
+                // Find TextView and set formatted date on it
+                viewHolder.dateView.setText(Utility.getFriendlyDayString(context, dateInMillis, false));
+
                 break;
             }
             case VIEW_TYPE_FUTURE_DAY: {
                 // Get weather icon
                 viewHolder.iconView.setImageResource(Utility.getIconResourceForWeatherCondition(
                         cursor.getInt(ForecastFragment.COL_WEATHER_CONDITION_ID)));
+                // Read date from cursor
+                long dateInMillis = cursor.getLong(ForecastFragment.COL_WEATHER_DATE);
+                // Find TextView and set formatted date on it
+                viewHolder.dateView.setText(Utility.getFriendlyDayString(context, dateInMillis, true));
+
+
                 break;
             }
         }
 
-            // Read date from cursor
-        long dateInMillis = cursor.getLong(ForecastFragment.COL_WEATHER_DATE);
-        // Find TextView and set formatted date on it
-        viewHolder.dateView.setText(Utility.getFriendlyDayString(context, dateInMillis));
 
         // Read weather forecast from cursor
         String description = cursor.getString(ForecastFragment.COL_WEATHER_DESC);
