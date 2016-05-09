@@ -221,4 +221,35 @@ public class Utility {
         }
         return -1;
     }
+
+    public static String getTalkbackWind(Context context, boolean isMetric, float windSpeed, float degrees) {
+        int windFormat;
+        if (Utility.isMetric(context)) {
+            windFormat = R.string.format_compass_kmh_talkback;
+        } else {
+            windFormat = R.string.format_compass_mph_talkback;
+            windSpeed = .621371192237334f * windSpeed;
+        }
+        String speed = Integer.toString(Math.round(windSpeed));
+
+        String direction = ""; // Don't want to say anything for an unknown direction.
+        if(348.75 <= degrees || degrees <= 11.25)       direction = "north";
+        else if(11.25 < degrees && degrees < 33.75)     direction = "north-northeast";
+        else if(33.75 <= degrees && degrees <= 56.25)   direction = "northeast";
+        else if(56.25 < degrees && degrees < 78.75)     direction = "east-northeast";
+        else if(78.75 <= degrees && degrees <= 101.25)  direction = "east";
+        else if(101.25 < degrees && degrees < 123.75)   direction = "east-southeast";
+        else if(123.75 <= degrees && degrees <= 146.25) direction = "southeast";
+        else if(146.25 < degrees && degrees < 168.75)   direction = "south-southeast";
+        else if(168.75 <= degrees && degrees <= 191.25) direction = "south";
+        else if(191.25 < degrees && degrees < 213.75)   direction = "south-southwest";
+        else if(213.75 <= degrees && degrees <= 236.25) direction = "southwest";
+        else if(236.25 < degrees && degrees < 258.75)   direction = "west-southwest";
+        else if(258.75 <= degrees && degrees <= 281.25) direction = "west";
+        else if(281.25 < degrees && degrees < 303.75)   direction = "west-northwest";
+        else if(303.75 <= degrees && degrees <= 326.25) direction = "northwest";
+        else if(326.25 < degrees && degrees < 348.75)   direction = "north-northwest";
+
+        return String.format(context.getString(windFormat), speed, direction);
+    }
 }

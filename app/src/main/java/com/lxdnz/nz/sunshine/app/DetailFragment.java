@@ -84,6 +84,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     private TextView mWindView;
     private TextView mPressureView;
     private TextView mLocationView;
+    private CompassView mCompassView;
 
     public DetailFragment() {
         setHasOptionsMenu(true);
@@ -109,6 +110,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
         mWindView = (TextView) rootView.findViewById(R.id.detail_wind_textview);
         mPressureView = (TextView) rootView.findViewById(R.id.detail_pressure_textview);
         mLocationView = (TextView) rootView.findViewById(R.id.detail_location_textview);
+        mCompassView = (CompassView) rootView.findViewById(R.id.detail_compass);
         return rootView;
 
     }
@@ -197,6 +199,8 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             // Read description from cursor and update view
             String description = data.getString(COL_WEATHER_DESC);
             mDescriptionView.setText(description);
+            // For accessibility, add a content description to the icon field.
+            mIconView.setContentDescription(description);
 
             // Read high temperature from cursor and update view
             boolean isMetric = Utility.isMetric(getActivity());
@@ -226,6 +230,12 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             // Read City Name from cursor and update view
             String city = data.getString(COL_LOCATION_CITY_NAME);
             mLocationView.setText(city);
+
+            // set the compass view
+            int direction = data.getInt(COL_WEATHER_DEGREES);
+            mCompassView.setDegrees(windDirStr);
+            mCompassView.setContentDescription(Utility.getTalkbackWind(getActivity(),
+                    isMetric, windSpeedStr, windDirStr));
 
             // We still need this for the share intent
             mForecast = String.format("%s - %s - %s/%s", dateText, description, high, low);

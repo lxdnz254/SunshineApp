@@ -65,12 +65,13 @@
     <!-- Windspeed formats -->
     <!-- Wind in mph [CHAR LIMIT=25] -->
     <string name="format_wind_mph">
-    Wind: <xliff:g id="speed">%1$1.0f</xliff:g> mph <xliff:g id="direction">%2$s</xliff:g>
+    Wind: <xliff:g id="speed">%1$1.0f</xliff:g> mph <xliff:g
+        id="direction">%2$s</xliff:g>
     </string>
 
     <!-- Wind in kph [CHAR LIMIT=25] -->
-    <string name="format_wind_kmh">
-    Wind: <xliff:g id="speed">%1$1.0f</xliff:g> km/h <xliff:g id="direction">%2$s</xliff:g>
+    <string name="format_wind_kmh">Wind: <xliff:g
+        id="speed">%1$1.0f</xliff:g> km/h <xliff:g id="direction">%2$s</xliff:g>
     </string>
 
     <!-- Pressure format CHAR LIMIT=25] -->
@@ -78,5 +79,29 @@
 
     <!-- Humidity format CHAR LIMIT=25]-->
     <string name="format_humidity">Humidity: <xliff:g id="humidity">%1.0f</xliff:g> %%</string>
+
+    <string name="direction_north">N</string>
+    <string name="direction_north_northeast">NNE</string>
+    <string name="direction_northeast">NE</string>
+    <string name="direction_east_northeast">ENE</string>
+    <string name="direction_east">E</string>
+    <string name="direction_east_southeast">ESE</string>
+    <string name="direction_southeast">SE</string>
+    <string name="direction_south_southeast">SSE</string>
+    <string name="direction_south">S</string>
+    <string name="direction_south_southwest">SSW</string>
+    <string name="direction_southwest">SW</string>
+    <string name="direction_west_southwest">WSW</string>
+    <string name="direction_west">W</string>
+    <string name="direction_west_northwest">WNW</string>
+    <string name="direction_northwest">NW</string>
+    <string name="direction_north_northwest">NNW</string>
+
+    <string name="format_compass_mph_talkback">Wind speed: <xliff:g
+        id="speed">%1$s</xliff:g> miles per hour, <xliff:g
+        id="direction">%2$s</xliff:g>.</string>
+<string name="format_compass_kmh_talkback">Wind speed: <xliff:g
+    id="speed">%1$s</xliff:g> kilometers per hour, <xliff:g
+    id="direction">%2$s</xliff:g>.</string>
 
 </resources>
