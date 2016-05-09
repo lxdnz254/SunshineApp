@@ -232,6 +232,13 @@ public class Utility {
         }
         String speed = Integer.toString(Math.round(windSpeed));
 
+        String direction = getDirectionLabel(degrees);
+
+        return String.format(context.getString(windFormat), speed, direction);
+    }
+
+    public static String getDirectionLabel(float degrees){
+
         String direction = ""; // Don't want to say anything for an unknown direction.
         if(348.75 <= degrees || degrees <= 11.25)       direction = "north";
         else if(11.25 < degrees && degrees < 33.75)     direction = "north-northeast";
@@ -250,6 +257,6 @@ public class Utility {
         else if(303.75 <= degrees && degrees <= 326.25) direction = "northwest";
         else if(326.25 < degrees && degrees < 348.75)   direction = "north-northwest";
 
-        return String.format(context.getString(windFormat), speed, direction);
+        return direction;
     }
 }

@@ -12,11 +12,15 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
 
 /**
  * TODO: document your custom view class.
  */
 public class CompassView extends View {
+
+    private static final String LOG_TAG = CompassView.class.getSimpleName();
 
     private float degreesNorth = 0;
     private float degreesSouth = 180;
@@ -118,5 +122,20 @@ public class CompassView extends View {
     public void setDegrees(float degrees) {
         degreesNorth = degrees;
         degreesSouth = degrees + 180;
+        invalidate();
+
+        final AccessibilityManager am =
+                (AccessibilityManager)(getContext()
+                        .getSystemService(Context.ACCESSIBILITY_SERVICE));
+        if (am.isEnabled()) sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED);
+    }
+
+    @Override
+    public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event)
+    {
+        super.dispatchPopulateAccessibilityEvent(event);
+        Log.v(LOG_TAG, "dispatchPopulateAccessibilityEvent(): event == " + event);
+        event.getText().add(Utility.getDirectionLabel(degreesNorth));
+        return true;
     }
 }
