@@ -104,4 +104,9 @@
     id="speed">%1$s</xliff:g> kilometers per hour, <xliff:g
     id="direction">%2$s</xliff:g>.</string>
 
+    <!-- Account type (for sync-adapter authenticator) -->
+    <!-- SyncAdapter related -->
+    <string name="sync_account_type">sunshine.lxdnz.nz.com</string>
+    <string name="content_authority">com.lxdnz.nz.sunshine.app</string>
+
 </resources>
