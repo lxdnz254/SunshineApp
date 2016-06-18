@@ -33,6 +33,13 @@
     <!-- Default location for location preference [CHAR LIMIT=NONE] -->
     <string name="pref_location_default" translatable="false">PioPio,NZ</string>
 
+    <!-- Strings used when displaying the state of the Location in settings -->
+    <string name="pref_location_error_description">Invalid Location (<xliff:g
+        id="location_setting">%1$s</xliff:g>)"</string>
+    <string name="pref_location_unknown_description">Validating Location... (<xliff:g
+        id="location_setting">%1$s</xliff:g>)"</string>
+
+
     <!-- Label for the temperature units preference [CHAR LIMIT=30] -->
     <string name="pref_units_label">Temperature Units</string>
 
