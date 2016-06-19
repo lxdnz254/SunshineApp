@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:gravity="center_vertical"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -47,11 +47,11 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:gravity="left"
+                android:gravity="start"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:orientation="vertical"
-                android:layout_gravity="left">
+                android:layout_gravity="start">
 
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -71,8 +71,9 @@
                 <!-- Humidity, wind, pressure -->
                 <LinearLayout
                     android:layout_height="wrap_content"
-                    android:gravity="left"
+                    android:gravity="start"
                     android:layout_marginLeft="0dp"
+                    android:layout_marginStart="0dp"
                     android:layout_marginTop="16dp"
                     android:layout_width="wrap_content"
                     android:orientation="vertical">
@@ -123,7 +124,7 @@
 
                 <FrameLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:gravity="center"
                     android:layout_marginTop="34dp"
                     android:layout_weight="1">
