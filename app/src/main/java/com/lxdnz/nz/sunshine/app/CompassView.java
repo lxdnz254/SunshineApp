@@ -73,12 +73,12 @@ public class CompassView extends View {
 
         int borderStrokeWidth = 4;
         Paint border = new Paint(Paint.ANTI_ALIAS_FLAG);
-        border.setColor(getResources().getColor(R.color.sunshine_light_blue));
+        border.setColor(getResources().getColor(R.color.colorPrimaryLight));
         border.setStrokeWidth(borderStrokeWidth);
         border.setStyle(Paint.Style.STROKE);
 
         Paint fillBlue = new Paint();
-        fillBlue.setColor(getResources().getColor(R.color.sunshine_blue));
+        fillBlue.setColor(getResources().getColor(R.color.colorPrimary));
         fillBlue.setStyle(Paint.Style.FILL);
 
         float borderInner = 0.8f;
