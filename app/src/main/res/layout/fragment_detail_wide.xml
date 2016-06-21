@@ -112,10 +112,9 @@
             <FrameLayout
                 app:layout_columnSpan="2"
                 android:gravity="center"
-                app:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                app:layout_gravity="center_horizontal"
                 android:paddingTop="@dimen/abc_list_item_padding_horizontal_material"
+                android:paddingLeft="@dimen/abc_action_bar_content_inset_material"
                 >
 
                 <com.lxdnz.nz.sunshine.app.CompassView
