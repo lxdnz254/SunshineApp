@@ -17,10 +17,8 @@
 
 <!-- Master layout. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -34,115 +32,10 @@
         android:layout_height="0dp"
         android:layout_weight="3"/>
 
-    <android.support.v7.widget.GridLayout
-        android:id="@+id/detail_additional_pane"
+    <include layout="@layout/detail_extras_grid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:background="@color/detail_accent_pane_background"
-        app:columnCount="3"
-        android:paddingBottom="@dimen/abc_list_item_padding_horizontal_material"
-        android:paddingEnd="@dimen/forecast_detail_horizontal_padding"
-        android:paddingLeft="@dimen/forecast_detail_horizontal_padding"
-        android:paddingRight="@dimen/forecast_detail_horizontal_padding"
-        android:paddingStart="@dimen/forecast_detail_horizontal_padding"
-        android:paddingTop="@dimen/abc_list_item_padding_horizontal_material">
-
-
-
-            <TextView
-                android:id="@+id/detail_humidity_label_textview"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:paddingEnd="@dimen/forecast_detail_horizontal_padding"
-                android:paddingRight="@dimen/forecast_detail_horizontal_padding"
-                android:gravity="center_vertical"
-                android:text="@string/humidity"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@color/detail_accent_label" />
-
-            <TextView
-
-                android:paddingEnd="@dimen/forecast_detail_horizontal_padding"
-                android:paddingRight="@dimen/forecast_detail_horizontal_padding"
-                android:id="@+id/detail_humidity_textview"
-                android:gravity="center_vertical"
-                app:layout_gravity="fill"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/white"
-                tools:text="38%" />
-
-        <FrameLayout
-            android:gravity="center"
-            app:layout_gravity="center_vertical"
-            app:layout_rowSpan="3">
-
-
-            <com.lxdnz.nz.sunshine.app.CompassView
-                android:id="@+id/detail_compass"
-                android:layout_gravity="center"
-
-                android:layout_height="100dp"
-                android:layout_width="100dp"
-
-                />
-        </FrameLayout>
-
-
-
-            <TextView
-
-                android:paddingEnd="@dimen/forecast_detail_horizontal_padding"
-                android:paddingRight="@dimen/forecast_detail_horizontal_padding"
-                android:id="@+id/detail_pressure_label_textview"
-                android:fontFamily="sans-serif"
-                android:gravity="center_vertical"
-                android:text="@string/pressure"
-                app:layout_rowWeight="1"
-                app:layout_gravity="fill"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@color/detail_accent_label" />
-
-
-            <TextView
-                android:id="@+id/detail_pressure_textview"
-                android:gravity="center_vertical"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/white"
-                app:layout_gravity="fill"
-                tools:text="995 hPa" />
-
-
-
-            <TextView
-                android:paddingEnd="@dimen/forecast_detail_horizontal_padding"
-                android:paddingRight="@dimen/forecast_detail_horizontal_padding"
-                android:id="@+id/detail_wind_label_textview"
-                android:fontFamily="sans-serif"
-                android:gravity="center_vertical"
-                android:text="@string/wind"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1"
-                android:textColor="@color/detail_accent_label"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-
-
-            <TextView
-                app:layout_gravity="fill"
-                android:id="@+id/detail_wind_textview"
-                android:gravity="center_vertical"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/white"
-                tools:text="4km/h NW" />
-
-
-
-
-
-    </android.support.v7.widget.GridLayout>
+        android:layout_weight="2"/>
 
 
 </LinearLayout>
