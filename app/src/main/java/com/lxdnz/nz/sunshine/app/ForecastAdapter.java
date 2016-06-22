@@ -104,12 +104,12 @@ public class ForecastAdapter extends CursorAdapter {
                 fallbackIconId = Utility.getArtResourceForWeatherCondition(weatherId);
 
                 // new insert starts
-
+                /*
                 // Read weather forecast from cursor
                 String locationString = cursor.getString(ForecastFragment.COL_CITY_NAME);
                 // Find TextView and set weather forecast on it
                 viewHolder.locationView.setText(locationString);
-
+                */
                 // new insert ends
                 // Read date from cursor
                 long dateInMillis = cursor.getLong(ForecastFragment.COL_WEATHER_DATE);
@@ -170,7 +170,7 @@ public class ForecastAdapter extends CursorAdapter {
         public final TextView descriptionView;
         public final TextView highTempView;
         public final TextView lowTempView;
-        public final TextView locationView;
+       // public final TextView locationView;
 
         public ViewHolder(View view) {
             iconView = (ImageView) view.findViewById(R.id.list_item_icon);
@@ -178,7 +178,7 @@ public class ForecastAdapter extends CursorAdapter {
             descriptionView = (TextView) view.findViewById(R.id.list_item_forecast_textview);
             highTempView = (TextView) view.findViewById(R.id.list_item_high_textview);
             lowTempView = (TextView) view.findViewById(R.id.list_item_low_textview);
-            locationView = (TextView) view.findViewById(R.id.list_item_loc_textview);
+          //  locationView = (TextView) view.findViewById(R.id.list_item_loc_textview);
         }
     }
 }

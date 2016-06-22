@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         app:columnCount="2">
-
+        <!--
         <TextView
         android:id="@+id/list_item_loc_textview"
 
@@ -43,7 +43,7 @@
             app:layout_columnWeight="1"
             app:layout_gravity="fill_horizontal"
             tools:text="PioPio, NZ" />
-
+        -->
 
         <TextView
             android:id="@+id/list_item_date_textview"

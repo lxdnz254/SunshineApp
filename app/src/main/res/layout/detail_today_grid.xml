@@ -28,7 +28,7 @@
         app:layout_columnSpan="2"
         app:layout_columnWeight="1"
         app:layout_rowWeight="1" />
-
+    <!--
     <TextView
         android:id="@+id/detail_location_textview"
         android:layout_marginBottom="@dimen/abc_list_item_padding_horizontal_material"
@@ -41,7 +41,7 @@
         android:textAppearance="?android:textAppearanceLarge"
         android:fontFamily="sans-serif-condensed"
         tools:text="PioPio, NZ"/>
-
+    -->
     <TextView
         android:id="@+id/detail_date_textview"
         android:layout_marginBottom="@dimen/abc_list_item_padding_horizontal_material"

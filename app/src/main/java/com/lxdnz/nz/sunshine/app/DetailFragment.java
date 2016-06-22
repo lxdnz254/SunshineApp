@@ -105,7 +105,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     private TextView mWindLabelView;
     private TextView mPressureView;
     private TextView mPressureLabelView;
-    private TextView mLocationView;
+    // private TextView mLocationView;
     private CompassView mCompassView;
 
     public DetailFragment() {
@@ -134,7 +134,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
         mWindLabelView = (TextView) rootView.findViewById(R.id.detail_wind_label_textview);
         mPressureView = (TextView) rootView.findViewById(R.id.detail_pressure_textview);
         mPressureLabelView = (TextView) rootView.findViewById(R.id.detail_pressure_label_textview);
-        mLocationView = (TextView) rootView.findViewById(R.id.detail_location_textview);
+       // mLocationView = (TextView) rootView.findViewById(R.id.detail_location_textview);
         mCompassView = (CompassView) rootView.findViewById(R.id.detail_compass);
         return rootView;
 
@@ -201,6 +201,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
         ViewParent vp = getView().getParent();
         if (vp instanceof CardView) {
             ((View)vp).setVisibility(View.INVISIBLE);
+            Log.v(LOG_TAG, "CardView INVISIBLE");
         }
         return null;
     }
@@ -213,6 +214,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             ViewParent vp = getView().getParent();
             if (vp instanceof CardView) {
                 ((View)vp).setVisibility(View.VISIBLE);
+                Log.v(LOG_TAG, "CardView VISIBLE");
             }
             // Read weather condition ID from cursor
             int weatherId = data.getInt(COL_WEATHER_CONDITION_ID);
@@ -273,11 +275,11 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             mPressureView.setText(getActivity().getString(R.string.format_pressure, pressure));
             mPressureView.setContentDescription(getString(R.string.a11y_pressure,mPressureView.getText()));
             mPressureLabelView.setContentDescription(mPressureView.getContentDescription());
-
+            /*
             // Read City Name from cursor and update view
             String city = data.getString(COL_LOCATION_CITY_NAME);
             mLocationView.setText(city);
-
+            */
             // Get metric true or false for windTalkback
             boolean isMetric = Utility.isMetric(getActivity());
 
