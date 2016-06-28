@@ -33,6 +33,25 @@ import java.util.Locale;
  * Created by alex on 5/05/16.
  */
 public class Utility {
+    // We'll default our LatLong to 0. Yay "Earth!"
+    public static float DEFAULT_LATLONG = 0F;
+
+    public static boolean isLocationLatLonAvailable(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return  prefs.contains(context.getString(R.string.pref_location_latitude)) &&
+                prefs.contains(context.getString(R.string.pref_location_longitude));
+    }
+
+    public static float getLocationLatitude(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getFloat(context.getString(R.string.pref_location_latitude), DEFAULT_LATLONG);
+    }
+
+    public static float getLocationLongitude(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return  prefs.getFloat(context.getString(R.string.pref_location_longitude), DEFAULT_LATLONG);
+    }
+
     public static String getPreferredLocation(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getString(context.getString(R.string.pref_location_key),
