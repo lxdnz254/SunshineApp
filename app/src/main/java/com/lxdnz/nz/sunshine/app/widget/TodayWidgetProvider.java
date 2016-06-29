@@ -15,23 +15,16 @@
 
 package com.lxdnz.nz.sunshine.app.widget;
 
-import android.annotation.TargetApi;
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.widget.RemoteViews;
 
-import com.lxdnz.nz.sunshine.app.MainActivity;
-import com.lxdnz.nz.sunshine.app.R;
-import com.lxdnz.nz.sunshine.app.Utility;
 import com.lxdnz.nz.sunshine.app.sync.SunshineSyncAdapter;
 
 /**
- * Provider for a widget showing today's weather
+ * Provider for a horizontally expandable widget showing today's weather
  *
  * Delegate widget updating to {@link TodayWidgetIntentService} to ensure that
  * data retrieval is done on a background thread
