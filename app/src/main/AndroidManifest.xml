@@ -121,6 +121,21 @@
         </receiver>
         <service android:name=".widget.TodayWidgetIntentService"/>
 
+        <receiver android:name=".widget.DetailWidgetProvider"
+            android:label="@string/title_widget_details"
+            android:enabled="@bool/widget_detail_enabled">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.lxdnz.nz.sunshine.app.ACTION_DATA_UPDATED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_detail"/>
+        </receiver>
+        <service android:name=".widget.DetailWidgetRemoteViewsService"
+            android:enabled="@bool/widget_detail_enabled"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
         <!-- Google Cloud Messaging receiver and services -->
         <receiver android:name="com.google.android.gms.gcm.GcmReceiver"
             android:exported="true"
