@@ -67,7 +67,7 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
     private boolean mHoldforTransition;
     private long mInitialSelectedDate = -1;
 
-    private static final String SELECTED_KEY = "selected_postion";
+    private static final String SELECTED_KEY = "selected_position";
 
     private static final int FORECAST_LOADER = 0;
 

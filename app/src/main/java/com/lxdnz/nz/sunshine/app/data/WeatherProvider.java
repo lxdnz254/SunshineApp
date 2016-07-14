@@ -275,7 +275,7 @@ public class WeatherProvider extends ContentProvider {
                         selection, selectionArgs);
                 break;
             default:
-                throw new UnsupportedOperationException("Unkown uri: " + uri);
+                throw new UnsupportedOperationException("Unknown uri: " + uri);
         }
 
         // Student: A null value deletes all rows.  In my implementation of this, I only notified

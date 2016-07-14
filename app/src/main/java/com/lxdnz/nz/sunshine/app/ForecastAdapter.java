@@ -43,7 +43,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     private static final int VIEW_TYPE_FUTURE_DAY = 1;
     private static final int VIEW_TYPE_COUNT = 2;
 
-    // flag to determine if we want to use a seperate view for "today".
+    // flag to determine if we want to use a separate view for "today".
     private boolean mUseTodayLayout = true;
 
     private Cursor mCursor;

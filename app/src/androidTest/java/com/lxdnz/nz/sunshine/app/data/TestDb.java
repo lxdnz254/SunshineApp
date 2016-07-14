@@ -167,7 +167,7 @@ public class TestDb extends AndroidTestCase {
         TestUtilities.validateCurrentRecord("Error: Weather query validation failed"
                 , weatherCursor, weatherValues);
 
-        // Move the cursor to demostrate there is only one record in the database
+        // Move the cursor to demonstrate there is only one record in the database
         assertFalse("Error: More than one record returned from weather query", weatherCursor.moveToNext());
 
         // Finally, close the cursor and database
@@ -220,7 +220,7 @@ public class TestDb extends AndroidTestCase {
         TestUtilities.validateCurrentRecord("Error: Location query validation failed"
                 , cursor, testValues);
 
-        // Move the cursor to demostrate there is only one record in the database
+        // Move the cursor to demonstrate there is only one record in the database
         assertFalse("Error: More than one record returned from location query", cursor.moveToNext());
 
         // Sixth Step: Finally, close the cursor and database
